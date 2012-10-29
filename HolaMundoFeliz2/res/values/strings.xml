@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, HolaMundoFeliz2Activity!</string>
+    <string name="app_name">HolaMundoFeliz2</string>
+    <string name="app_name2">HolaMundoSubActivity</string>
+    <string name="buttonSaludar">Saludar ahora</string>
+</resources>

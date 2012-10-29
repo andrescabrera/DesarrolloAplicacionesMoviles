@@ -1,0 +1,11 @@
+//	private int tamanioScrollAreaWidth(int porcentaje) {
+//		int unoPorCiento = getSize().width / 100;
+//		int tamaniopx = unoPorCiento * porcentaje;
+//		return tamaniopx;
+//	}
+//	
+//	private int tamanioScrollAreaHeight(int porcentaje) {
+//		int unoPorCiento = getSize().height / 100;
+//		int tamaniopx = unoPorCiento * porcentaje;
+//		return tamaniopx;
+//	}

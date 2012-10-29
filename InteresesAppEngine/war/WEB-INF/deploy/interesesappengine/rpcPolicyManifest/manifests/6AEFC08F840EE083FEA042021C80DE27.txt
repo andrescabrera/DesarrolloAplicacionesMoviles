@@ -1,0 +1,2 @@
+serviceClass: com.cabrera.intereses.client.GreetingService
+path: D9E30A64BCD3ED9EE17F29C72D4C37EF.gwt.rpc

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test</title>
+<link rel="stylesheet" href="jquery.mobile-1.0b3.min.css" />
+<script src="jquery-1.6.2.min.js"></script>
+<script src="jquery.mobile-1.0b3.min.js"></script>
+</head>
+<body>
+	<div data-role="page">
+
+		<div data-role="header">
+			<h1>Home</h1>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content">
+
+			<div data-role="fieldcontain">
+				<label for="name">Campo texto:</label> <input type="text"
+					name="name" id="name" value="" />
+			</div>
+
+			<div data-role="fieldcontain">
+				<label for="select-choice-a" class="select">Localidad:</label> 
+				<select
+					name="select-choice-a" id="select-choice-a"
+					data-native-menu="false">
+					<option value="xxxx">Cap. Fed.</option>
+					<option value="xxxx">Bs. As.</option>
+					<option value="xxx">xxxxxx</option>
+
+				</select>
+			</div>
+
+
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a">
+					<button type="submit" data-theme="d">Cancel</button>
+				</div>
+				<div class="ui-block-b">
+					<button type="submit" data-theme="a">Submit</button>
+				</div>
+			</fieldset>
+
+		</div>
+		<!-- /content -->
+
+		<div data-role="footer">
+			<h4>Footer content</h4>
+		</div>
+		<!-- /footer -->
+
+	</div>
+	<!-- /page -->
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+            http://www.springframework.org/schema/jdbc
+            http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/jms
+			http://www.springframework.org/schema/jms/spring-jms-3.0.xsd
+			http://cxf.apache.org/jaxws
+			http://cxf.apache.org/schemas/jaxws.xsd
+			http://www.springframework.org/schema/task
+			http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+
+	<import resource="dataSource.xml" />
+	<import resource="hibernate.xml" />
+
+	<tx:annotation-driven />
+
+	<bean id="userDao" parent="abstractDao">
+		<property name="proxyInterfaces">
+			<value>edu.curso.java.spring.dao.UserDAO</value>
+		</property>
+		<property name="target">
+			<bean parent="abstractDaoTarget">
+				<constructor-arg>
+					<value>edu.curso.java.spring.bo.User</value>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	<bean id="postDao" parent="abstractDao">
+		<property name="proxyInterfaces">
+			<value>edu.curso.java.spring.dao.PostDAO</value>
+		</property>
+		<property name="target">
+			<bean parent="abstractDaoTarget">
+				<constructor-arg>
+					<value>edu.curso.java.spring.bo.Post</value>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="zoneDao" parent="abstractDao">
+		<property name="proxyInterfaces">
+			<value>edu.curso.java.spring.dao.ZoneDAO</value>
+		</property>
+		<property name="target">
+			<bean parent="abstractDaoTarget">
+				<constructor-arg>
+					<value>edu.curso.java.spring.bo.Zone</value>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ratingDao" parent="abstractDao">
+		<property name="proxyInterfaces">
+			<value>edu.curso.java.spring.dao.RatingDAO</value>
+		</property>
+		<property name="target">
+			<bean parent="abstractDaoTarget">
+				<constructor-arg>
+					<value>edu.curso.java.spring.bo.Rating</value>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="messageDao" parent="abstractDao">
+		<property name="proxyInterfaces">
+			<value>edu.curso.java.spring.dao.MessageDAO</value>
+		</property>
+		<property name="target">
+			<bean parent="abstractDaoTarget">
+				<constructor-arg>
+					<value>edu.curso.java.spring.bo.Message</value>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="interestDao" parent="abstractDao">
+		<property name="proxyInterfaces">
+			<value>edu.curso.java.spring.dao.InterestDAO</value>
+		</property>
+		<property name="target">
+			<bean parent="abstractDaoTarget">
+				<constructor-arg>
+					<value>edu.curso.java.spring.bo.Interest</value>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="localizationDao" parent="abstractDao">
+		<property name="proxyInterfaces">
+			<value>edu.curso.java.spring.dao.LocalizationDAO</value>
+		</property>
+		<property name="target">
+			<bean parent="abstractDaoTarget">
+				<constructor-arg>
+					<value>edu.curso.java.spring.bo.Localization</value>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+
+	<context:component-scan base-package="edu.curso.java.spring" />
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+	<bean id="finderIntroductionAdvisor"
+		class="edu.curso.java.spring.dao.finder.impl.FinderIntroductionAdvisor" />
+
+	<bean id="abstractDaoTarget" class="edu.curso.java.spring.dao.impl.GenericDAOImp"
+		abstract="true">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="abstractDao" class="org.springframework.aop.framework.ProxyFactoryBean"
+		abstract="true">
+		<property name="interceptorNames">
+			<list>
+				<value>finderIntroductionAdvisor</value>
+			</list>
+		</property>
+	</bean>
+</beans>

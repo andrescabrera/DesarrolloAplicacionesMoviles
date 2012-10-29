@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop> -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+
+		<property name="annotatedClasses">
+			<list>
+				<value>edu.curso.java.spring.bo.User</value>
+				<value>edu.curso.java.spring.bo.Interest</value>
+				<value>edu.curso.java.spring.bo.Zone</value>
+				<value>edu.curso.java.spring.bo.Post</value>
+				<value>edu.curso.java.spring.bo.Rating</value>
+				<value>edu.curso.java.spring.bo.Localization</value>
+				<value>edu.curso.java.spring.bo.Message</value>
+			</list>
+		</property>
+
+	</bean>
+</beans>

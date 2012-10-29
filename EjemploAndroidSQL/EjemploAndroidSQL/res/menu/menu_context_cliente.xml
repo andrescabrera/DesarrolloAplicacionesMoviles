@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item android:id="@+id/ItemMenuEditar" android:title="@string/boton_editar"></item>
+	<item android:id="@+id/ItemMenuBorrar" android:title="@string/boton_borrar"></item>
+
+</menu>

@@ -1,0 +1,5 @@
+		SharedPreferences settings = getSharedPreferences(PREFS_NAME,
+				Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putString("server", editTextServer.getText().toString());
+		editor.commit();

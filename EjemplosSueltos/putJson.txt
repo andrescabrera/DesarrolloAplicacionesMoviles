@@ -1,0 +1,1 @@
+{"requestUrl":"http://localhost:8080/EjemploSpringMVC/usuarios/user.html","requestMethod":"POST","requestBody":"[{\"surname\":\"Ramiro\",\"ratings\":[],\"posts\":[],\"dateOfBirth\":1316340567000,\"followers\":[],\"messagesSent\":[],\"messagesReceived\":[],\"name\":\"Pijin\",\"id\":9}","headers":["Content-Type","application/json"]}

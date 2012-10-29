@@ -1,0 +1,10 @@
+Cliente Android
+Subida de imágenes para las publicaciones.
+Usar C2DM para los mensajes privados.
+Mínimo un ABM y login de usuarios y un ABM simple para cada BO.
+Manejo de geolocalizaciones de las publicaciones. 
+
+Aplicacion Servidor
+Migrar el servidor a Google AppEngine -ya recodifiqué algo de la persistencia-, y quizás publicar la aplicación en el Market.
+Plus trabajar con el API de twitter para levantar publicaciones de ahí.
+

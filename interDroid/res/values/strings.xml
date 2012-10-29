@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InterDroid</string>
+    <string name="operacion_ok">La operación se completó con éxito</string>
+	<string name="operacion_error">Error al ejecutar la operación</string>
+	<string name="boton_editar">Editar</string>
+	<string name="boton_borrar">Borrar</string>
+	<string name="boton_agregar">Agregar</string>
+	<string name="boton_salir">Salir</string>
+	<string name="boton_guardar">Guardar</string>
+	<string name="titulo_form_interes">ABM Interés</string>
+</resources>

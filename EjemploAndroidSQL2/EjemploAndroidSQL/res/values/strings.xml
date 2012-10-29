@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Principal!</string>
+    <string name="app_name">EjemploAndroidSQL</string>
+    <string name="app_desc">Listado de clientes</string>
+    <string name="titulo_form_cliente">Formulario general de cliente</string>
+    <string name="nombre_form_cliente">Nombre</string>
+    <string name="boton_guardar">Guardar</string>
+    <string name="operacion_ok">La operación se completó con éxito</string>
+	<string name="operacion_error">Error al ejecutar la operación</string>
+	<string name="boton_agregar">Agregar</string>
+    <string name="boton_salir">Salir</string>
+    <string name="boton_borrar">Borrar</string>
+    <string name="boton_editar">Editar</string>
+</resources>
